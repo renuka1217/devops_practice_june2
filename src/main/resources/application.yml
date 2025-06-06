@@ -4,8 +4,10 @@ spring:
       ddl-auto: ${ddl-auto}
     properties:
       hibernate.format_sql: ${format_sql}
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+      hibernate.dialect: ${dialect}
   datasource:
     url: ${url}
     username: ${username}
     password: ${password}
+  application:
+    name: GetUserDetails

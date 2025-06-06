@@ -1,4 +1,4 @@
-package net.codejava;
+package com.login.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

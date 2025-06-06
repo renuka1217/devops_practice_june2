@@ -5,7 +5,7 @@ FROM eclipse-temurin:21-jdk-alpine as builder
 WORKDIR /app
 
 # Copy the Spring Boot jar to the image
-COPY target/SpringBootRegistrationLogin-1.0.jar app.jar
+COPY target/GetUserDetails-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port (adjust if needed)
 EXPOSE 8080
