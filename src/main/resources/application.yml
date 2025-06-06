@@ -3,7 +3,8 @@ spring:
     hibernate:
       ddl-auto: ${ddl-auto}
     properties:
-      hibernate.format_sql: ${format_sql}					
+      hibernate.format_sql: ${format_sql}
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
   datasource:
     url: ${url}
     username: ${username}
