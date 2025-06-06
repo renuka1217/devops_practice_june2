@@ -3,3 +3,4 @@ format_sql = true
 url=jdbc:mysql://localhost:3306/codejavadb
 username = root
 password = password
+dialect=org.hibernate.dialect.MySQL8Dialect
