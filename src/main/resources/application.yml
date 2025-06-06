@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: ${ddl-auto}
+    properties:
+      hibernate.format_sql: ${format_sql}					
+  datasource:
+    url: ${url}
+    username: ${username}
+    password: ${password}

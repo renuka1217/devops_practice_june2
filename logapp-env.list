@@ -1,0 +1,5 @@
+ddl-auto = none
+format_sql = true
+url=jdbc:mysql://localhost:3306/codejavadb
+username = root
+password = password
