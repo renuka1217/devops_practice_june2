@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build JAR') {
             steps {
-                sh './mvnw clean package -DskipTests' // or ./gradlew build
+                sh './chmod +x mvnw clean package -DskipTests' // or ./gradlew build
             }
         }
 
