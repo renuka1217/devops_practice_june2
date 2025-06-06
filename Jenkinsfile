@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-    docker {
-      image 'docker:latest' // or a custom image with Docker CLI
-      args  '-v /var/run/docker.sock:/var/run/docker.sock'
-    }
-    }
+    agent any
+    
     environment {
         IMAGE_NAME = 'login-app'
         IMAGE_TAG = 'latest'
