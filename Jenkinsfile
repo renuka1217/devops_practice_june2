@@ -4,13 +4,13 @@ pipeline {
     environment {
         IMAGE_NAME = 'login-app'
         IMAGE_TAG = 'latest'
-        DOCKER_REGISTRY = 'your-dockerhub-username' // or private registry
+        DOCKER_REGISTRY = 'renuka1217' // or private registry
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://your-repo-url.git', branch: 'main'
+                git url: 'https://github.com/renuka1217/devops_practice_june2.git', branch: 'main'
             }
         }
 
@@ -28,24 +28,24 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhubcredentials', usernameVariable: 'renuka1217', passwordVariable: 'LMC86_pnsGmk?5Q')]) {
                     sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                     sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
 
-        stage('Deploy (Optional)') {
-            when {
-                expression { return fileExists('docker-compose.yml') }
-            }
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
-    }
+      //  stage('Deploy (Optional)') {
+       //     when {
+        //        expression { return fileExists('docker-compose.yml') }
+         //   }
+          //  steps {
+          //      sh 'docker-compose up -d'
+         //   }
+        // }
+    // }
 
-    post {
+    // post {
         always {
             echo 'Pipeline completed.'
         }
