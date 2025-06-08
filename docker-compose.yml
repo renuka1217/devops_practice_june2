@@ -1,0 +1,44 @@
+version: '3.3'
+services:
+  db:
+    image: mariadb:latest
+    container_name: mariadb-container
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: mysql
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - login_network
+    ports:
+      - "3307:3306"
+  loginapp:
+    image: renuka1217/login-app:latest
+    container_name: loginapp
+    env_file:
+      - ./logapp-env.list
+    ports:
+      - "9080:8080"
+    networks:
+      - login_network
+    depends_on:
+      - db
+  frontend:
+    image: renuka1217/sales-login-module:latest
+    container_name: salseloginmodule
+    environment:
+      VITE_API_URL: "http://renuka.com:9080/users"
+    ports:
+      - "5174:5173"
+    networks:
+      - login_network
+    depends_on:
+      - loginapp
+
+volumes:
+  mariadb_data:
+
+networks:
+  login_network:
