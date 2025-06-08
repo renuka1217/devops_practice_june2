@@ -1,6 +1,6 @@
-ddl-auto = none
-format_sql = true
-url=jdbc:mysql://localhost:3306/codejavadb
-username = root
-password = password
+ddl-auto=none
+format_sql=true
+url=jdbc:mysql://mariadb-container:3306/mysql
+username=root
+password=root
 dialect=org.hibernate.dialect.MySQL8Dialect
