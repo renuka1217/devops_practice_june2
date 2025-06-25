@@ -11,3 +11,6 @@ spring:
     password: ${password}
   application:
     name: GetUserDetails
+app:
+  cors:
+    allowed-origins: ${allowed-origins}
