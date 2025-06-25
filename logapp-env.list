@@ -4,3 +4,4 @@ url=jdbc:mysql://mariadb-container:3306/mysql
 username=root
 password=root
 dialect=org.hibernate.dialect.MySQL8Dialect
+allowed-origins=http://localhost:5174,http://192.168.23.131:5174,https://renuka.com
