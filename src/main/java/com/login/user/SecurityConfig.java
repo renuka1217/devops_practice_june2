@@ -17,7 +17,7 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${APP_CORS_ALLOWED_ORIGINS}")
+    @Value("#{'${APP_CORS_ALLOWED_ORIGINS}'.split(,)}")
     private List<String> allowedOrigins;
     
     @Bean
